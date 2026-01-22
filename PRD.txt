@@ -1,0 +1,276 @@
+📘 PRODUCT REQUIREMENTS DOCUMENT (PRD)
+Product Title
+
+Academic Roadmaps
+Visual, interactive curriculum paths for school students — web-based and lightweight.
+
+Vision
+
+Provide students with clear, structured learning paths for academic subjects (e.g., Math, Physics, Biology). Roadmaps should be visual, interactive, and accessible on all devices, including low-end phones. Admin interface allows curriculum editing without authentication.
+
+🎯 Goals
+Primary Goals
+
+✔ Help students navigate school subjects through visual progressions
+✔ Allow click-to-open nodes with embedded content and resources
+✔ Support nested subnodes (concept hierarchies)
+✔ Fast, lightweight, responsive — works anywhere, even offline
+
+Secondary Goals
+
+✔ Admin UI for non-technical editing
+✔ No authentication required initially
+✔ Easy deployment on Replit, Netlify, Vercel, etc.
+
+🧩 User Personas
+Persona	Needs	Primary Use
+Student (Primary/Secondary)	Understand subject progression	View roadmaps, read content, explore resources
+Admin/You	Populate & edit curriculum	Add/edit nodes, resources, connections
+🗂 App Components
+1️⃣ Main Web App (Student UI)
+
+Class Selection (e.g., Grade 10, Grade 11)
+
+Subject Selection (Maths, Physics, etc.)
+
+Chapter Navigation
+
+Interactive Roadmap Canvas
+
+Zoom & pan support
+
+Search within roadmap
+
+Collapse/expand sections
+
+Click on nodes to open content panel
+
+Node Content Panel
+
+Title
+
+Description
+
+Embedded resources (articles, videos, PDFs, practice links)
+
+2️⃣ Admin Web App
+
+Tree view of curriculum hierarchy
+
+Editable fields for:
+
+Node title
+
+Node content
+
+Resource links
+
+Drag/Connect nodes visually
+
+Add/edit/delete:
+
+Classes
+
+Subjects
+
+Chapters
+
+Roadmap nodes
+
+Edges (connections)
+
+Visual canvas optional but recommended
+
+3️⃣ Backend API
+
+REST endpoints
+
+Stores shared data (JSON or DB)
+
+Public read APIs for main app
+
+CRUD APIs for admin
+
+🧠 Features & Requirements
+UX/UI
+Main App
+
+✔ Responsive design (mobile first)
+✔ Minimum viable main screens
+✔ Visual roadmap canvas with interaction
+✔ Node click → detail panel
+✔ Search bar filters roadmap nodes
+✔ Zoom & pan
+✔ Collapse/expand subnodes
+
+Admin App
+
+✔ Tree view hierarchy
+✔ Inline editing
+✔ Node creation/removal
+✔ Simple visual connect/disconnect
+✔ Save changes via API
+
+🧱 Data Models
+Class
+{
+  "id": "string",
+  "name": "string"
+}
+
+Subject
+{
+  "id": "string",
+  "classId": "string",
+  "name": "string"
+}
+
+Chapter
+{
+  "id": "string",
+  "subjectId": "string",
+  "name": "string"
+}
+
+Roadmap Node (Recursive)
+{
+  "id": "string",
+  "chapterId": "string",
+  "title": "string",
+  "description": "string",
+  "content": "string",
+  "resources": {
+    "articles": [{"title":"", "url":""}],
+    "videos": [{"title":"", "url":""}],
+    "exercises": [{"title":"", "url":""}]
+  },
+  "children": [ /* nested nodes */ ]
+}
+
+Edge
+
+If using graph structure instead of tree:
+
+{ "from": "node1", "to": "node2" }
+
+🛠 Tech Architecture
+Frontend
+
+React or Preact
+
+React Flow for roadmap visualization
+
+Tailwind CSS for styling
+
+Mobile-First CSS breakpoints
+
+Client routing w/ React Router
+
+Backend
+
+Node.js + Express (simple + deployable on Replit)
+
+MongoDB or SQLite (JSON-like data storage)
+
+Serve static JSON if DB not needed
+
+Deployment
+
+Main UI: Netlify / Vercel / GitHub Pages
+
+Admin UI: Replit / Heroku / Vercel
+
+Backend: Replit + hosted DB or Netlify Functions
+
+📊 API Endpoints
+Public APIs (read only)
+GET /classes
+GET /classes/:id/subjects
+GET /subjects/:id/chapters
+GET /chapters/:id/roadmap
+
+Admin APIs (CRUD)
+POST /admin/classes
+PUT /admin/classes/:id
+DELETE /admin/classes/:id
+
+// similarly for subjects, chapters, nodes, edges
+
+🧠 Interaction & Flow
+Student Flow
+
+Landing → Show class cards
+
+Pick Class → list subjects
+
+Pick Subject → list chapters
+
+Pick Chapter → render roadmap canvas
+
+Search / zoom / expand / collapse
+
+Click on node → open detail panel
+
+📉 Performance & Accessibility
+Minimum Requirements
+
+✔ Works in all modern browsers
+✔ Doesn’t require install
+✔ Low memory overhead
+✔ Works at 3G / limited data
+
+Performance Strategies
+
+Lazy-load roadmap library
+
+Code splitting
+
+PWA caching
+
+Minimal DOM reflows
+
+⚡ Admin Experience
+
+Design Admin API to be:
+
+Clean REST
+
+Predictable schemas
+
+Easy to curate resources without code
+
+UI should:
+✔ let admin drag nodes (optional)
+✔ let admin reparent subnodes
+✔ highlight required fields
+✔ autosave on change
+
+🗓 Product Milestones
+Phase	Scope	Duration
+Phase 1	Basic UI + static JSON, no backend	1 week
+Phase 2	Add backend + public read APIs	1 week
+Phase 3	Admin CRUD UI + APIs	2 weeks
+Phase 4	Zoom/Pan/Search/Collapse	1 week
+Phase 5	Polish + deploy + test	1 week
+✅ Success Criteria
+
+📌 Students can navigate learning paths and open topic details
+📌 Admin can edit curriculum without manual JSON edits
+📌 App loads in <2s on low-end devices
+📌 Search, zoom, collapse work fluidly
+📌 No crashes on 2GB RAM phones
+
+📄 Wireframes / UI Structure
+Main App
+[Header: Class Selection]
+[Subject Grid]
+[Chapter List]
+[Roadmap Canvas]
+[Search Bar]
+[Node Detail Panel (modal or drawer)]
+
+Admin App
+[Sidebar Tree View]
+[Canvas / List View]
+[Edit Form Panel]
+[Add / Remove Buttons]
