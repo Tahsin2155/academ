@@ -1,0 +1,146 @@
+{
+  "classes": [
+    { "id": "class-9", "name": "Grade 9" },
+    { "id": "class-10", "name": "Grade 10" },
+    { "id": "class-11", "name": "Grade 11" },
+    { "id": "class-12", "name": "Grade 12" }
+  ],
+  "subjects": [
+    { "id": "math-9", "classId": "class-9", "name": "Mathematics" },
+    { "id": "physics-9", "classId": "class-9", "name": "Physics" },
+    { "id": "chemistry-9", "classId": "class-9", "name": "Chemistry" },
+    { "id": "biology-9", "classId": "class-9", "name": "Biology" },
+    { "id": "math-10", "classId": "class-10", "name": "Mathematics" },
+    { "id": "physics-10", "classId": "class-10", "name": "Physics" },
+    { "id": "chemistry-10", "classId": "class-10", "name": "Chemistry" },
+    { "id": "biology-10", "classId": "class-10", "name": "Biology" },
+    { "id": "math-11", "classId": "class-11", "name": "Mathematics" },
+    { "id": "physics-11", "classId": "class-11", "name": "Physics" },
+    { "id": "math-12", "classId": "class-12", "name": "Mathematics" },
+    { "id": "physics-12", "classId": "class-12", "name": "Physics" }
+  ],
+  "chapters": [
+    { "id": "ch-algebra-9", "subjectId": "math-9", "name": "Algebra Basics" },
+    { "id": "ch-geometry-9", "subjectId": "math-9", "name": "Geometry Fundamentals" },
+    { "id": "ch-motion-9", "subjectId": "physics-9", "name": "Motion and Force" },
+    { "id": "ch-atoms-9", "subjectId": "chemistry-9", "name": "Atomic Structure" },
+    { "id": "ch-cell-9", "subjectId": "biology-9", "name": "Cell Biology" },
+    { "id": "ch-quadratic-10", "subjectId": "math-10", "name": "Quadratic Equations" },
+    { "id": "ch-trig-10", "subjectId": "math-10", "name": "Trigonometry" },
+    { "id": "ch-electricity-10", "subjectId": "physics-10", "name": "Electricity and Magnetism" },
+    { "id": "ch-calculus-11", "subjectId": "math-11", "name": "Introduction to Calculus" },
+    { "id": "ch-mechanics-11", "subjectId": "physics-11", "name": "Classical Mechanics" }
+  ],
+  "nodes": [
+    {
+      "id": "node-1",
+      "chapterId": "ch-algebra-9",
+      "title": "Variables & Expressions",
+      "description": "Understanding variables, constants, and algebraic expressions",
+      "content": "In algebra, a variable is a symbol (usually a letter) that represents an unknown value. An expression is a combination of variables, numbers, and operations.",
+      "resources": {
+        "articles": [
+          { "title": "Introduction to Variables", "url": "https://example.com/variables" }
+        ],
+        "videos": [
+          { "title": "Variables Explained", "url": "https://youtube.com/watch?v=example1" }
+        ],
+        "exercises": [
+          { "title": "Practice Problems", "url": "https://example.com/practice1" }
+        ]
+      },
+      "children": [],
+      "position": { "x": 250, "y": 0 }
+    },
+    {
+      "id": "node-2",
+      "chapterId": "ch-algebra-9",
+      "title": "Equations",
+      "description": "Solving linear equations with one variable",
+      "content": "An equation is a mathematical statement that shows two expressions are equal. To solve an equation means to find the value of the variable that makes the equation true.",
+      "resources": {
+        "articles": [
+          { "title": "Solving Linear Equations", "url": "https://example.com/equations" }
+        ],
+        "videos": [
+          { "title": "Equation Tutorial", "url": "https://youtube.com/watch?v=example2" }
+        ],
+        "exercises": [
+          { "title": "Equation Exercises", "url": "https://example.com/practice2" }
+        ]
+      },
+      "children": [],
+      "position": { "x": 250, "y": 150 }
+    },
+    {
+      "id": "node-3",
+      "chapterId": "ch-algebra-9",
+      "title": "Inequalities",
+      "description": "Understanding and solving inequalities",
+      "content": "An inequality is a mathematical statement that compares two expressions using symbols like <, >, ≤, or ≥. Unlike equations, inequalities can have many solutions.",
+      "resources": {
+        "articles": [
+          { "title": "Introduction to Inequalities", "url": "https://example.com/inequalities" }
+        ],
+        "videos": [],
+        "exercises": []
+      },
+      "children": [],
+      "position": { "x": 250, "y": 300 }
+    },
+    {
+      "id": "node-4",
+      "chapterId": "ch-motion-9",
+      "title": "Distance & Displacement",
+      "description": "Understanding the difference between distance and displacement",
+      "content": "Distance is the total path length traveled, while displacement is the shortest distance from start to end point with direction.",
+      "resources": {
+        "articles": [
+          { "title": "Distance vs Displacement", "url": "https://example.com/motion" }
+        ],
+        "videos": [],
+        "exercises": []
+      },
+      "children": [],
+      "position": { "x": 250, "y": 0 }
+    },
+    {
+      "id": "node-5",
+      "chapterId": "ch-motion-9",
+      "title": "Speed & Velocity",
+      "description": "Calculating speed and velocity",
+      "content": "Speed is the rate of change of distance, while velocity is the rate of change of displacement. Velocity includes direction, making it a vector quantity.",
+      "resources": {
+        "articles": [],
+        "videos": [
+          { "title": "Speed and Velocity", "url": "https://youtube.com/watch?v=speed" }
+        ],
+        "exercises": []
+      },
+      "children": [],
+      "position": { "x": 250, "y": 150 }
+    },
+    {
+      "id": "node-6",
+      "chapterId": "ch-motion-9",
+      "title": "Acceleration",
+      "description": "Understanding acceleration and its calculations",
+      "content": "Acceleration is the rate of change of velocity. It can be positive (speeding up), negative (slowing down), or zero (constant velocity).",
+      "resources": {
+        "articles": [],
+        "videos": [],
+        "exercises": [
+          { "title": "Acceleration Problems", "url": "https://example.com/accel" }
+        ]
+      },
+      "children": [],
+      "position": { "x": 250, "y": 300 }
+    }
+  ],
+  "edges": [
+    { "id": "edge-1-2", "from": "node-1", "to": "node-2" },
+    { "id": "edge-2-3", "from": "node-2", "to": "node-3" },
+    { "id": "edge-4-5", "from": "node-4", "to": "node-5" },
+    { "id": "edge-5-6", "from": "node-5", "to": "node-6" }
+  ]
+}
