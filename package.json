@@ -1,0 +1,24 @@
+{
+  "name": "academ",
+  "version": "1.0.0",
+  "description": "Academic Roadmaps - Visual, interactive curriculum paths for school students",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\" \"npm run dev:admin\"",
+    "dev:server": "npm run dev --workspace=@academ/server",
+    "dev:client": "npm run dev --workspace=@academ/client",
+    "dev:admin": "npm run dev --workspace=@academ/admin",
+    "build": "npm run build --workspaces",
+    "start": "npm run start --workspace=@academ/server",
+    "seed": "npm run seed --workspace=@academ/server"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
